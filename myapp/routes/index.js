@@ -23,4 +23,10 @@ router.get('/testconnect', function (req, res, next) {
   }
 });
 
+router.get('/customer', function (req, res, next) {
+ db.query('SELECT * FROM tb_book', function (err, rs) {
+   res.render('customer', {book: rs});
+ });
+});
+
 module.exports = router;
